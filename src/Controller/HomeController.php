@@ -1,4 +1,5 @@
 <?php
+// To init server : php -S 127.0.0.1:8000 -t public/
 namespace App\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
