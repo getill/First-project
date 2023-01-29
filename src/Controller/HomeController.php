@@ -25,4 +25,14 @@ class HomeController
     {
         return new Response('<body>Vous êtes sur la page de contact</body>');
     }
+
+    /**
+     * @Route("/bonjour/{name}", name="hello")
+     *
+     * @return Response
+     */
+    public function hello(string $name)
+    {
+        return new Response('<body>Bonjour '.$name.'</body>');
+    }
 }
