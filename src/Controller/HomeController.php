@@ -2,18 +2,27 @@
 // To init server : php -S 127.0.0.1:8000 -t public/
 namespace App\Controller;
 
-use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
-class HomeController extends AbstractController
+
+class HomeController
 {
-    #[Route('/')]
-    public function  number()
+    /**
+     * @Route("/", name="index")
+     * @Route("/contact", name="contact")
+     *
+     * @return response
+     */
+    public function index(): response
     {
-        $number = rand(0, 100);
+        return new Response('<body>Hello world!</body>');
+    }
 
-        return $this->render('/base.html.twig', [
-            "number" => $number
-        ]);
-
+    /**
+     * @Route("/contact", name="contact")
+     */
+    public function contact()
+    {
+        return new Response('<body>Vous êtes sur la page de contact</body>');
     }
 }
